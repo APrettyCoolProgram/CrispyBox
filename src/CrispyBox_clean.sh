@@ -16,6 +16,10 @@
 # Track when CrispyBox was cleaned.
 touch ~/.CrispyBox/Logs/CrispyBox_clean-b231201.$(date "+%Y-%m-%d")
 
+sudo apt autoremove -y 
+sudo apt autoclean -y 
+sudo apt clean -y 
+
 # Remove documentation and manpages.
 sudo rm -rf /usr/share/doc/*
 sudo rm -rf /usr/share/man/* 
