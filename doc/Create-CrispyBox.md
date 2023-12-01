@@ -1,12 +1,14 @@
-# CrispyBox_blank
+# CrispyBox
 
-CrispyBox_blank is a new virtual machine with the following specifications:
+Current version of CrispyBox: 23.12
 
-- The installer disc image (iso) should be the [Debian 12.2.0 amd64 mini.iso](https://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/mini.iso)
-- 20GB HDD (single file)
-- 4096MB RAM
-- 2 CPU
-- Accelerate 3D graphics (8GB RAM)
-- Disable "Share Bluetooth devices with the virtual machine"
+`wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_23-12.sh`
+
+`chmod +x CrispyBox_23-12.sh`
+
+`./CrispyBox_23-12.sh`
+
+
+***
 
 **NEXT** > [CrispyBox_installed](Create-CrispyBox-installed.md)

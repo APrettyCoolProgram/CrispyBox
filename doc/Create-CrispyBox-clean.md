@@ -1,21 +1,25 @@
-# CrispyBox_bedrock
+# CrispyBox_clean
 
-CrispyBox_bedrock is used to build a fully functional CrispyBox environment.
+CrispyBox_clean is optional.
 
-CrispyBox_bedrock:
+CrispyBox_bedrock removes the following:
 
-- Creates required CrispyBox directory structure
-- Removes the `sudo` password requirement for the `crispybox` user
-- Modifies the MOTD
-- Updates the system
-- Cleans the system
+- /usr/share/doc/*
+- /usr/share/man/* 
+- /var/cache/apt/archives/*deb
+- /var/cache/apt/archives/partial/*deb
+- /var/lib/apt/lists/*
 
-## Run the CrispyBox_bedrock script
+## Run the CrispyBox_clean script
 
 Start the CrispyBox VM, then type:
 
-`wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_bedrock.sh`
+`wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_clean.sh`
 
-`chmod +x CrispyBox_bedrock.sh`
+`CrispyBox_clean.sh`
 
-`./CrispyBox_bedrock.sh`
+`CrispyBox_clean.sh`
+
+***
+
+**NEXT** > [CrispyBox_bedrock](Create-CrispyBox-bedrock.md)
