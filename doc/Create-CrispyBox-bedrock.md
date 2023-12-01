@@ -19,3 +19,7 @@ Start the CrispyBox VM, then type:
 `chmod +x CrispyBox_bedrock.sh`
 
 `./CrispyBox_bedrock.sh`
+
+***
+
+**NEXT** > [CrispyBox_clean](Create-CrispyBox-clean.md)
