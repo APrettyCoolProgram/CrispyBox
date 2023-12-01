@@ -8,60 +8,27 @@
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 ## -----------------------------------------------------------------------------
-## CrispyBox_bedrock.sh
-## Initialize a barebones CrispyBox.
+## CrispyBox_essentials.sh
+## Install essential packages.
 ## b231201
 ## -----------------------------------------------------------------------------
 
-# Create the required CrispyBox directories.
-mkdir -p ~/.CrispyBox/{Logs,Manifests,Scripts,Temp}
-
-# Remove sudo password requirement for CrispyBox user.
-echo 'crispybox ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
-
-# Create the a log file to track the version of CrispyBox.
-# The "CrispyBox_bedrock.sh version" is the version of the CrispyBox_bedrock.sh,
-# and needs to be manually updated when the script is updated.
-currentDate=$(date "+%m.%d.%Y")
-
-cat > ~/.CrispyBox/Logs/CrispyBox_bedrock<< EOF
-
-Date of build: $currentDate
-CrispyBox_bedrock.sh version: b231201
-
-EOF
-
-# Update the MOTD.
-
-printf "\n\n===== CrispyBox ============================================\n\n > Version: _bedrock\n > Release: 12.01.23\n\n https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================" | sudo tee /etc/motd
+# Track when essential packages were added to CrispyBox.
+touch ~/.CrispyBox/Logs/CrispyBox_essentials-b231201.$(date "+%m-%d-%Y")
 
 # Update the system.
 sudo apt update -y
 sudo apt upgrade -y
 
-# Clean the system.
-sudo apt autoremove -y 
-sudo apt autoclean -y 
-sudo apt clean -y 
+# Install essential packages.
+sudo apt install -y --no-install-recommends linux-headers-$(uname -r) | tee ~/.CrispyBox/Logs/linux-headers-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends curl | tee ~/.CrispyBox/Logs/curl-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends gpg | tee ~/.CrispyBox/Logs/gpg-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends apt-transport-https | tee ~/.CrispyBox/Logs/apt-transport-https-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends dkms | tee ~/.CrispyBox/Logs/dkms-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends build-essential | tee ~/.CrispyBox/Logs/build-essential-install.$(date "+%Y-%m-%d")
+sudo apt install -y --no-install-recommends screen | tee ~/.CrispyBox/Logs/build-essential-install.$(date "+%Y-%m-%d")
 
-# Remove unnecessary apt packages and lists.
-sudo rm -rf /var/cache/apt/archives/*deb
-sudo rm -rf /var/cache/apt/archives/partial/*deb
-sudo rm -rf /var/lib/apt/lists/*
-
+# Probably don't need this.
 # Move the CrispyBox-Zero.sh script to the scripts directory.
-mv CrispyBox_bedrock.sh ~/.CrispyBox/Scripts/CrispyBox_bedrock.sh
-
-# Clear and defragment the filesystem.
-sudo e4defrag /
-cat /dev/zero > ~/zero.zero
-rm zero.zero
-sudo e4defrag /
-
-# Clear the bash history.
-rm .bash_history
-touch .bash_history
-history -c
-
-# Shutdown the system.
-sudo shutdown -h now
+#mv CrispyBox_bedrock.sh ~/.CrispyBox/Scripts/CrispyBox_bedrock.sh
