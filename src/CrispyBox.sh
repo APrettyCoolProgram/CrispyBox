@@ -21,13 +21,13 @@ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/Cri
 
 chmod +x ~/.CrispyBox/Scripts/*
 
-if [ $1 == "update"];
-then
+if [ $1 == "update"]; then
+    echo "upgrading"
     ./CrispyBox/Scripts/CrispyBox_update-upgrade.sh $2
-elif [ $1 == "optimize"];
-then
+elif [ $1 == "optimize"]; then
+    echo "optimizing"
     ./CrispyBox/Scripts/CrispyBox_optimize.sh $2
 else
-    #thing
+    echo "nothing"
 fi
 
