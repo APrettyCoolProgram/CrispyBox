@@ -8,13 +8,13 @@
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-if [ $1 -eq "update" ]; then
+if [ $1 = "update" ]; then
     echo "upgrading"
     ./CrispyBox/Scripts/CrispyBox_update-upgrade.sh $2
-elif [ $1 -eq "optimize" ]; then
+elif [ $1 = "optimize" ]; then
     echo "optimizing"
     ./CrispyBox/Scripts/CrispyBox_optimize.sh $2
-elif [ $1 -eq "refresh" ]; then
+elif [ $1 = "refresh" ]; then
     RefreshCrispyBox
 else
     echo "Nothing to do."
