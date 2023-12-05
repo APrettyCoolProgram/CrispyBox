@@ -26,12 +26,6 @@ sudo rm -rf /usr/share/man/*
 # Move CrispyBox_clean.sh to the .CrispyBox/Scripts directory.
 mv CrispyBox_clean.sh ~/.CrispyBox/Scripts/CrispyBox_clean.sh
 
-# Clear and defragment the filesystem.
-sudo e4defrag /
-cat /dev/zero > ~/zero.zero
-rm zero.zero
-sudo e4defrag /
-
 # Clear the bash history.
 rm .bash_history
 touch .bash_history
