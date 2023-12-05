@@ -2,14 +2,11 @@
 
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 ## CrispyBox_build(b231205)
-## Builds a CrispyBox development environment.
+## Create a CrispyBox_bedrock image
 ## https://github.com/APrettyCoolProgram/CrispyBox
 ## Copyright (c) A Pretty Cool Program. All rights reserved.
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-version=$("23.12")
-build=$("b231205")
 
 # Update the system.
 sudo apt update -y | tee ~/.CrispyBox/Logs/system-update.$(date "+%Y%m%d-%H%M%S")
@@ -36,7 +33,7 @@ CrispyBox_clean.sh
 echo "CrispyBox_bedrock(b231205)" > ~/.CrispyBox/Logs/CrispyBox_bedrock.$(date "+%Y%m%d-%H%M%S")
 
 # Update the MOTD.
-printf "\n\n===== CrispyBox ============================================\n\n > Version: $version\n > Build: $build\n\n https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
+printf "\n\n===== CrispyBox ============================================\n\n > Version: _bedrock\n > Release: YY.MM.DD\n\n https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
 
 # Reboot the system to make sure changes take effect.
 sudo reboot

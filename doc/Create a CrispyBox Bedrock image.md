@@ -46,7 +46,7 @@ When the installation is complete, reboot by typing:
 
 `~$ sudo reboot`  
 
-## Loging in for the first time
+## Logging in for the first time
 
 After CrispyBox reboots, login to CrispyBox using the following credentials:
 
