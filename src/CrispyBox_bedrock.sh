@@ -8,6 +8,10 @@
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
+## Maybe create a .CrispyBox/Logs/Bedrock directory and put all the logs in there?
+##
+## Or just put all of this in a function in CrispyBox.sh and call it from there?
+
 # Create the required CrispyBox directories.
 mkdir -p ~/.CrispyBox/{Logs,Manifests,Scripts,Temp}
 echo "b231205" > ~/.CrispyBox/Logs/Bedrock_create-required-directories.$(date "+%Y%m%d-%H%M%S")
@@ -20,8 +24,12 @@ echo "b231205" > ~/.CrispyBox/Logs/Bedrock_sudo.$(date "+%Y%m%d-%H%M%S")
 sudo apt update -y | tee ~/.CrispyBox/Logs/Bedrock_update.$(date "+%Y%m%d-%H%M%S")
 sudo apt upgrade -y | tee ~/.CrispyBox/Logs/Bedrock_upgrade.$(date "+%Y%m%d-%H%M%S")
 
-## Install ppen-vm-tools
+## Install the open-vm-tools package.
 sudo apt install open-vm-tools -y | tee ~/.CrispyBox/Logs/Bedrock_install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
+
+## Download the current CrispyBox script.
+wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/
+chmod +x ~/.CrispyBox/Scripts/CrispyBox.sh
 
 ## Remove unnecessary packages.
 sudo apt autoremove -y | tee ~/.CrispyBox/Logs/Bedrock_autoremove.$(date "+%Y%m%d-%H%M%S")
