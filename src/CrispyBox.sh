@@ -8,18 +8,6 @@
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-if [ $1 = "update" ]; then
-    echo "upgrading"
-    ./CrispyBox/Scripts/CrispyBox_update-upgrade.sh $2
-elif [ $1 = "optimize" ]; then
-    echo "optimizing"
-    ./CrispyBox/Scripts/CrispyBox_optimize.sh $2
-elif [ $1 = "refresh" ]; then
-    RefreshCrispyBox
-else
-    echo "Nothing to do."
-fi
-
 RefreshCrispyBox(){
     read -p "Press enter to refresh all CrispyBox scripts..."
 
@@ -33,3 +21,15 @@ RefreshCrispyBox(){
 
     chmod +x ~/.CrispyBox/Scripts/*
 }
+
+if [ "$1" = "update" ]; then
+    echo "upgrading"
+    ./CrispyBox/Scripts/CrispyBox_update-upgrade.sh $2
+elif [ "$1" = "optimize" ]; then
+    echo "optimizing"
+    ./CrispyBox/Scripts/CrispyBox_optimize.sh $2
+elif [ "$1" = "refresh" ]; then
+    RefreshCrispyBox
+else
+    echo "Nothing to do."
+fi

@@ -1,6 +1,8 @@
 # The CrispyBox_build script
 
-`wget -o https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/`
+`rm ~/.CrispyBox/Scripts/CrispyBox.sh`
+
+`wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/`
 
 `chmod +x ~/.CrispyBox/Scripts/CrispyBox.sh`
 
