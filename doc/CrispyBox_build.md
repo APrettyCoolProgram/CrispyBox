@@ -1,6 +1,8 @@
-# CrispyBox_bedrock
+# The CrispyBox_build script
 
-CrispyBox_bedrock is used to build a fully functional CrispyBox environment.
+The CrispyBox_build script is used to build a fully functional CrispyBox environment.
+
+The current version of CrispyBox_build - `v23.12` - does the following
 
 CrispyBox_bedrock:
 
@@ -22,4 +24,4 @@ Start the CrispyBox VM, then type:
 
 ***
 
-**NEXT** > [CrispyBox_clean](Create-CrispyBox-clean.md)
+**NEXT** > [CrispyBox_build](Create-CrispyBox-build.md)

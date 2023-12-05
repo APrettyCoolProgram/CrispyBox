@@ -1,11 +1,9 @@
 # CrispyBox_clean
 
-CrispyBox_clean is optional.
-
-CrispyBox_bedrock removes the following:
+CrispyBox_clean removes the following:
 
 - /usr/share/doc/*
-- /usr/share/man/* 
+- /usr/share/man/
 - /var/cache/apt/archives/*deb
 - /var/cache/apt/archives/partial/*deb
 - /var/lib/apt/lists/*
@@ -23,3 +21,12 @@ Start the CrispyBox VM, then type:
 ***
 
 **NEXT** > [CrispyBox_bedrock](Create-CrispyBox-bedrock.md)
+
+
+<!--
+# Possible updates:
+#
+# localepurge
+# deborphan
+# debfoster
+-->
