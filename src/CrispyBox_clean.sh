@@ -8,7 +8,7 @@
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
-# Track this cleaning.
+# Track this cleaning!
 echo "b231205" > ~/.CrispyBox/Logs/CrispyBox_clean.$(date "+%Y-%m-%d")
 
 ## Remove unnecessary packages.
