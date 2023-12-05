@@ -34,3 +34,5 @@ touch ~/.CrispyBox/Logs/CrispyBox_23-12.$(date "+%Y-%m-%d")
 
 # Update the MOTD.
 printf "\n\n===== CrispyBox ============================================\n\n > Version: 23.12\n > Release: 12.01.23\n\n https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
+
+sudo rebootdf -h
