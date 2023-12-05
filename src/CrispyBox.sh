@@ -9,13 +9,12 @@
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 RefreshCrispyBox(){
-    msg = "Refreshing CrispyBox scripts...\nThis might take a while."
+    echo "\n\n  Refreshing CrispyBox scripts..."
     
-    read -p "$msg"
-
+    echo "  Removing existing CrispyBox scripts..."
     rm ~/.CrispyBox/Scripts/*
 
-    # Get the current CrispyBox scripts.
+    echo "  Downloading current CrispyBox scripts..."
     wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_build.sh -P ~/.CrispyBox/Scripts/
     wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_clean.sh -P ~/.CrispyBox/Scripts/
     wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_deepclean.sh -P ~/.CrispyBox/Scripts/
@@ -23,6 +22,7 @@ RefreshCrispyBox(){
     wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_required.sh -P ~/.CrispyBox/Scripts/
     wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_update-upgrade.sh -P ~/.CrispyBox/Scripts/
 
+    echo "  Making CrispyBox scripts executable..."
     chmod +x ~/.CrispyBox/Scripts/*
 }
 
