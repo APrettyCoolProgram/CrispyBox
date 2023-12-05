@@ -2,15 +2,39 @@
 
 The CrispyBox_build script is used to build a fully functional CrispyBox environment.
 
+`Crispy_build -update
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The current version of CrispyBox_build - `v23.12` - does the following
 
 CrispyBox_bedrock:
 
-- Creates required CrispyBox directory structure
-- Removes the `sudo` password requirement for the `crispybox` user
-- Modifies the MOTD
-- Updates the system
-- Cleans the system
+- Downloads 
 
 ## Run the CrispyBox_bedrock script
 
