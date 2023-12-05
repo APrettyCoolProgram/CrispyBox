@@ -17,15 +17,16 @@ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/Cri
 wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_deepclean.sh -P ~/.CrispyBox/Scripts/
 wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_optimize.sh -P ~/.CrispyBox/Scripts/
 wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_required.sh -P ~/.CrispyBox/Scripts/
+wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_update-upgrade.sh -P ~/.CrispyBox/Scripts/
 
 chmod +x ~/.CrispyBox/Scripts/*
 
 if [ $1 == "update"];
 then
-    #thing
-elif [ $1 == "refresh"];
+    ./CrispyBox/Scripts/CrispyBox_update-upgrade.sh $2
+elif [ $1 == "optimize"];
 then
-    #thing
+    ./CrispyBox/Scripts/CrispyBox_optimize.sh $2
 else
     #thing
 fi

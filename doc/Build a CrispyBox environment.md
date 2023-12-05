@@ -19,11 +19,12 @@ I suggest [reading more about what the CrispyBox_build script does](./CrispyBox_
 
 Once you are ready to build a CrispyBox development environment, type the following commands:
 
-`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_build.sh`
+`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/
+`
 
-`~$ chmod +x CrispyBox_build.sh`
+`~$ chmod +x ~/.CrispyBox/Scripts/CrispyBox.sh`
 
-`~$ ./CrispyBox_build.sh`
+`~$ ~.CrispyBox/Scripts/CrispyBox.sh`
 
 
 
