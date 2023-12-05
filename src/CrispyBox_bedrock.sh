@@ -20,6 +20,9 @@ echo "b231205" > ~/.CrispyBox/Logs/Bedrock_sudo.$(date "+%Y%m%d-%H%M%S")
 sudo apt update -y | tee ~/.CrispyBox/Logs/Bedrock_update.$(date "+%Y%m%d-%H%M%S")
 sudo apt upgrade -y | tee ~/.CrispyBox/Logs/Bedrock_upgrade.$(date "+%Y%m%d-%H%M%S")
 
+## Install ppen-vm-tools
+sudo apt install open-vm-tools -y | tee ~/.CrispyBox/Logs/Bedrock_install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
+
 ## Remove unnecessary packages.
 sudo apt autoremove -y | tee ~/.CrispyBox/Logs/Bedrock_autoremove.$(date "+%Y%m%d-%H%M%S")
 sudo apt autoclean -y | tee ~/.CrispyBox/Logs/Bedrock_autoclean.$(date "+%Y%m%d-%H%M%S")

@@ -15,6 +15,12 @@ Create a new VMWare Workstation virtual machine with the following specification
 - Accelerate 3D graphics (8GB RAM)
 - Disable "Share Bluetooth devices with the virtual machine"
 
+When you first start the new virtual machine, you will get a popup warning you about "mitigations". To resolve this:
+
+1. Stop the virtual machine
+2. Add `ulm.disableMitigations="TRUE"`  to the end of the "CrispyBox.vmx" file
+3. Restart the virtual machine.
+
 ## Next, install Debian
 
 Technically this can be done with any Linux distribution that uses the aptitude package manager, but these instructions will be using [Debian Bookworm](https://www.debian.org/) (specifically v12.2.0)
@@ -54,16 +60,17 @@ The CrispyBox_bedrock script will do the following:
 - Creates required CrispyBox directory structure
 - Removes the `sudo` password requirement for the `crispybox` user
 - Modifies the MOTD
+- Updates/upgrades the system
+- Installs the latest `open-vm-tools` package
+- Cleans the system
+- Optimizes the system
 
 Once you are ready to build a CrispyBox development environment, type the following commands:
 
-`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_build.sh`
+`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_bedrock.sh`
 
-`~$ chmod +x CrispyBox_build.sh`
+`~$ chmod +x CrispyBox_bedrock.sh`
 
-`~$ ./CrispyBox_build.sh`
-
-
-
+`~$ ./CrispyBox_bedrock.sh`
 
 Once the virtual machine has restarted, you can build your [CrispyBox development environment](Build%20a%20CrispyBox%20environment.md).

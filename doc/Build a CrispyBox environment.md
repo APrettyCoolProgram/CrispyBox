@@ -24,3 +24,8 @@ Once you are ready to build a CrispyBox development environment, type the follow
 `~$ chmod +x CrispyBox_build.sh`
 
 `~$ ./CrispyBox_build.sh`
+
+
+
+
+sudo apt-get install open-vm-tools-desktop
