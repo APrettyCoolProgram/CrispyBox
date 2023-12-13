@@ -1,64 +1,12 @@
 #!/bin/bash
 
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-## CrispyBox(b231213)
+## CrispyBox(b231205)
 ## CrispyBox script.
 ## https://github.com/APrettyCoolProgram/CrispyBox
 ## Copyright (c) A Pretty Cool Program. All rights reserved.
 ## Licensed under the Apache 2.0 license.
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-
-# Create the required CrispyBox directories.
-mkdir -p ~/.CrispyBox/{Logs,Manifests,Scripts,Temp}
-
-# Remove sudo password requirement for CrispyBox user.
-echo 'crispybox ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
-
-## Update and upgrade the system
-sudo apt update -y | tee ~/.CrispyBox/Logs/apt-update.$(date "+%Y%m%d-%H%M%S")
-sudo apt upgrade -y | tee ~/.CrispyBox/Logs/apt-upgrade.$(date "+%Y%m%d-%H%M%S")
-
-## Install packages
-sudo apt install open-vm-tools -y | tee ~/.CrispyBox/Logs/apt-install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
-sudo apt install net-tools -y | tee ~/.CrispyBox/Logs/apt-install-net-tools.$(date "+%Y%m%d-%H%M%S")
-sudo apt install openssh-server -y | tee ~/.CrispyBox/Logs/apt-install-openssh-server.$(date "+%Y%m%d-%H%M%S")
-
-## Remove unnecessary packages.
-sudo apt autoremove -y | tee ~/.CrispyBox/Logs/apt-autoremove.$(date "+%Y%m%d-%H%M%S")
-sudo apt autoclean -y | tee ~/.CrispyBox/Logs/apt-autoclean.$(date "+%Y%m%d-%H%M%S")
-sudo apt clean -y | tee ~/.CrispyBox/Logs/apt-clean.$(date "+%Y%m%d-%H%M%S")
-
-# Clear and defragment the filesystem.
-sudo e4defrag /
-cat /dev/zero > ~/zero.zero
-rm zero.zero
-sudo e4defrag /
-
-# Clear the bash history.
-rm .bash_history
-touch .bash_history
-history -c
-
-# Update the MOTD.
-printf "\n\n===== CrispyBox ============================================\n\n > Version: $(date "+%Y%m")\n > https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
-
-# Reboot the system to make sure changes take effect.
-sudo reboot
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 RefreshCrispyBox(){
     echo "\n\n  Refreshing CrispyBox scripts..."

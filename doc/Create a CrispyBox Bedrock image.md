@@ -61,7 +61,10 @@ The CrispyBox_bedrock script will do the following:
 - Removes the `sudo` password requirement for the `crispybox` user
 - Modifies the MOTD
 - Updates/upgrades the system
-- Installs the latest `open-vm-tools` package
+- Installs the following packages:
+  - `open-vm-tools`
+  - `net-tools`
+  - `openssh-server`
 - Cleans the system
 - Optimizes the system
 
