@@ -46,34 +46,3 @@ When the installation is complete, reboot by typing:
 
 `~$ sudo reboot`  
 
-## Logging in for the first time
-
-After CrispyBox reboots, login to CrispyBox using the following credentials:
-
-- Username: `crispybox`
-- Password: `crispybox`
-
-# Download and execute the CrispyBox_bedrock script
-
-The CrispyBox_bedrock script will do the following:
-
-- Creates required CrispyBox directory structure
-- Removes the `sudo` password requirement for the `crispybox` user
-- Modifies the MOTD
-- Updates/upgrades the system
-- Installs the following packages:
-  - `open-vm-tools`
-  - `net-tools`
-  - `openssh-server`
-- Cleans the system
-- Optimizes the system
-
-Once you are ready to build a CrispyBox development environment, type the following commands:
-
-`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox_bedrock.sh`
-
-`~$ chmod +x CrispyBox_bedrock.sh`
-
-`~$ ./CrispyBox_bedrock.sh`
-
-Once the virtual machine has restarted, you can build your [CrispyBox development environment](Build%20a%20CrispyBox%20environment.md).
