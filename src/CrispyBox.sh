@@ -20,18 +20,21 @@ sudo apt update && sudo apt upgrade -y
 ## Install packages
 sudo apt install -y linux-headers-$(uname -r) dkms build-essential open-vm-tools openssh-server curl gpg apt-transport-https screen
 
-# Install .NET 8 SDK (amd64)
-#wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-#sudo dpkg -i packages-microsoft-prod.deb
-#rm packages-microsoft-prod.deb
-#sudo apt install -y dotnet-sdk-8.0
-
-# Install .NET 8 SDK (arm64)
-wget https://download.visualstudio.microsoft.com/download/pr/7ec1a911-afeb-47fa-a1d0-fa22cd980b32/157c20841cbf1811dd2a7a51bf4aaf88/dotnet-sdk-8.0.100-linux-arm.tar.gz
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.100-linux-arm.tar.gz -C $HOME/dotnet
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-
+# Install .NET 8 SDK
+if [ "$1" = "amd64" ]; then
+    wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+    sudo apt install -y dotnet-sdk-8.0
+elif [ "$1" = "arm64" ]; then
+    wget https://download.visualstudio.microsoft.com/download/pr/7ec1a911-afeb-47fa-a1d0-fa22cd980b32/157c20841cbf1811dd2a7a51bf4aaf88/dotnet-sdk-8.0.100-linux-arm.tar.gz
+    mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.100-linux-arm.tar.gz -C $HOME/dotnet
+    export DOTNET_ROOT=$HOME/dotnet
+    export PATH=$PATH:$HOME/dotnet
+    echo "PATH=$PATH:$HOME/dotnet" >> .profile
+else
+    echo ".NET 8 SDK not installed."
+fi
 
 ## Remove unnecessary packages.
 sudo apt autoremove && sudo apt autoclean && sudo apt clean -y \
