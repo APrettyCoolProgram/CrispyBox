@@ -1,32 +1,33 @@
 # Build a CrispyBox development environment
 
-This document will walk through building a CrispyBox development environment
+## Logging in for the first time
 
-But before you do that, you will need a [CrispyBox Bedrock image](to build on).
-
-Once you have a CrispyBox Bedrock image, spin it up and login to CrispyBox using the following credentials:
+After CrispyBox reboots, login to CrispyBox using the following credentials:
 
 - Username: `crispybox`
 - Password: `crispybox`
 
-# The CrispyBox_build script
+# Download and execute the CrispyBox script
 
-The CrispyBox_build script will build your CrispyBox development environment.
+The CrispyBox script will do the following:
 
-I suggest [reading more about what the CrispyBox_build script does](./CrispyBox_build.md) before running it.
-
-# Download and execute the CrispyBox_build script
+- Creates required CrispyBox directory structure
+- Removes the `sudo` password requirement for the `crispybox` user
+- Modifies the MOTD
+- Updates/upgrades the system
+- Installs the following packages:
+  - `open-vm-tools`
+  - `net-tools`
+  - `openssh-server`
+- Cleans the system
+- Optimizes the system
 
 Once you are ready to build a CrispyBox development environment, type the following commands:
 
-`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/
-`
+`~$ wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh`
 
-`~$ chmod +x ~/.CrispyBox/Scripts/CrispyBox.sh`
+`~$ chmod +x CrispyBox.sh`
 
-`~$ ~.CrispyBox/Scripts/CrispyBox.sh`
+`~$ ./CrispyBox.sh`
 
-
-
-
-sudo apt-get install open-vm-tools-desktop
+Once the virtual machine has restarted, you can build your [CrispyBox development environment](Build%20a%20CrispyBox%20environment.md).
