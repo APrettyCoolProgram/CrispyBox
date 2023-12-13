@@ -14,21 +14,16 @@ mkdir -p ~/.CrispyBox/{Logs,Temp}
 # Remove sudo password requirement for CrispyBox user.
 echo 'crispybox ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 
-## Update and upgrade the system
+# Update and upgrade the system
 sudo apt update && sudo apt upgrade -y
 
+# Download prerequisites.
+wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+
 ## Install packages
-sudo apt install -y \
-linux-headers-$(uname -r) \
-dkms \
-build-essential \
-open-vm-tools \
-openssh-server \
-curl \
-gpg \
-apt-transport-https \
-screen \
-| tee ~/.CrispyBox/Logs/install-packages.$(date "+%Y%m%d-%H%M%S")
+sudo apt install -y linux-headers-$(uname -r) dkms build-essential open-vm-tools openssh-server dotnet-sdk-8.0 curl gpg apt-transport-https screen | tee ~/.CrispyBox/Logs/install-packages.$(date "+%Y%m%d-%H%M%S")
 
 ## Remove unnecessary packages.
 sudo apt autoremove && sudo apt autoclean && sudo apt clean -y \
