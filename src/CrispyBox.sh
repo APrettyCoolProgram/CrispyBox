@@ -20,7 +20,6 @@ sudo apt upgrade -y | tee ~/.CrispyBox/Logs/apt-upgrade.$(date "+%Y%m%d-%H%M%S")
 
 ## Install packages
 sudo apt install -y open-vm-tools | tee ~/.CrispyBox/Logs/apt-install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y net-tools | tee ~/.CrispyBox/Logs/apt-install-net-tools.$(date "+%Y%m%d-%H%M%S")
 sudo apt install -y openssh-server | tee ~/.CrispyBox/Logs/apt-install-openssh-server.$(date "+%Y%m%d-%H%M%S")
 sudo apt install -y linux-headers-$(uname -r) | tee ~/.CrispyBox/Logs/install-linux-headers.$(date "+%Y%m%d-%H%M%S")
 sudo apt install -y curl | tee ~/.CrispyBox/Logs/install-curl.$(date "+%Y%m%d-%H%M%S")
