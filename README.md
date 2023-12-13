@@ -77,13 +77,3 @@ Once you are ready to build a CrispyBox development environment, type the follow
 `~$ chmod +x CrispyBox.sh`
 
 `~$ ./CrispyBox.sh`
-
-# Included packages (as of v23.12)
-
-- `open-vm-tools`
-- `openssh-server`
-- `linux-headers-$(uname -r)`
-- `curl`
-- `gpg`
-- `apt-transport-https`
-- `screen`

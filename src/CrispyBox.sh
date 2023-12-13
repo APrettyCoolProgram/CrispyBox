@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-## CrispyBox v23.12 [b231213.1433]
+## CrispyBox v23.12 [b231213.1447]
 ## CrispyBox script.
 ## https://github.com/APrettyCoolProgram/CrispyBox
 ## Copyright (c) A Pretty Cool Program. All rights reserved.
@@ -15,18 +15,23 @@ mkdir -p ~/.CrispyBox/{Logs,Temp}
 echo 'crispybox ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 
 ## Update and upgrade the system
-sudo apt update && sudo apt upgrade -y | tee ~/.CrispyBox/Logs/apt-update-upgrade.$(date "+%Y%m%d-%H%M%S")
+sudo apt update && sudo apt upgrade -y
 
 ## Install packages
-sudo apt install -y linux-headers-$(uname -r) dkms build-essential | tee ~/.CrispyBox/Logs/install-headers-dkms-essentials.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y open-vm-tools openssh-server | tee ~/.CrispyBox/Logs/install-vmtools-sshserver.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y curl gpg apt-transport-https screen | tee ~/.CrispyBox/Logs/install-curl-gpg-transport-screen.$(date "+%Y%m%d-%H%M%S")
-#sudo apt install --no-install-recommends --no-install-suggests -y linux-headers-$(uname -r) dkms build-essential | tee ~/.CrispyBox/Logs/install-headers-dkms-essentials.$(date "+%Y%m%d-%H%M%S")
-#sudo apt install --no-install-recommends --no-install-suggests -y open-vm-tools openssh-server | tee ~/.CrispyBox/Logs/install-vmtools-sshserver.$(date "+%Y%m%d-%H%M%S")
-#sudo apt install --no-install-recommends --no-install-suggests -y curl gpg apt-transport-https screen | tee ~/.CrispyBox/Logs/install-curl-gpg-transport-screen.$(date "+%Y%m%d-%H%M%S")
+sudo apt install -y \
+linux-headers-$(uname -r) \
+dkms \
+build-essential \
+open-vm-tools \
+openssh-server \
+curl \
+gpg \
+apt-transport-https \
+screen \
+| tee ~/.CrispyBox/Logs/install-packages.$(date "+%Y%m%d-%H%M%S")
 
 ## Remove unnecessary packages.
-sudo apt autoremove && sudo apt autoclean && sudo apt clean -y | tee ~/.CrispyBox/Logs/apt-autoremove-autoclean-clean.$(date "+%Y%m%d-%H%M%S")
+sudo apt autoremove && sudo apt autoclean && sudo apt clean -y \
 
 # Remove the CrispyBox script
 rm CrispyBox.sh
