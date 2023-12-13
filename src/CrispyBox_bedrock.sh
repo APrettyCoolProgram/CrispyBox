@@ -26,6 +26,8 @@ sudo apt upgrade -y | tee ~/.CrispyBox/Logs/Bedrock_upgrade.$(date "+%Y%m%d-%H%M
 
 ## Install the open-vm-tools package.
 sudo apt install open-vm-tools -y | tee ~/.CrispyBox/Logs/Bedrock_install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
+sudo apt install net-tools -y | tee ~/.CrispyBox/Logs/Bedrock_install-net-tools.$(date "+%Y%m%d-%H%M%S")
+sudo apt install openssh-server -y | tee ~/.CrispyBox/Logs/Bedrock_install-openssh-server.$(date "+%Y%m%d-%H%M%S")
 
 ## Download the current CrispyBox script.
 wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/
