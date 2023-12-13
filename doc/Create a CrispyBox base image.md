@@ -1,8 +1,6 @@
-# Create a CrispyBox Bedrock image
+# Create a CrispyBox Base image
 
-This document will walk through creating a CrispyBox Bedrock image, which you will need to build a CrispyBox development environment.
-
-## First, create a new virtual machine
+### Create a new virtual machine
 
 Technically this can be done with any virtualization software, but these instructions will be using VMWare Workstation.
 
@@ -12,8 +10,11 @@ Create a new VMWare Workstation virtual machine with the following specification
 - 20GB HDD (single file)
 - 4096MB RAM
 - 2 CPU
-- Accelerate 3D graphics (8GB RAM)
 - Disable "Share Bluetooth devices with the virtual machine"
+
+If you are going to install desktop packages:
+
+- Accelerate 3D graphics (8GB RAM)
 
 When you first start the new virtual machine, you will get a popup warning you about "mitigations". To resolve this:
 
@@ -36,7 +37,6 @@ Then, choose the default install values *except*:
   - **Set up users and passwords** > **Choose a password for the new user**: `crispybox`
   - **Partition disks** > **Partitioning Scheme**: `Separate /home, /var, and /tmp partitions`
   - **Install the base system** > **Drivers to include in the initrd**: `targeted`
-  - **Configure the package manager** > **Use non-free firmware**: `Yes`
   - **Configure the package manager** > **Use non-free software**: `Yes`
   - **Configure the package manager** > **Enable source repositories in APT**: `No`
   - **Configure the package manager** > **Services to use**: All three components should be checked
@@ -44,5 +44,4 @@ Then, choose the default install values *except*:
 
 When the installation is complete, reboot by typing:
 
-`~$ sudo reboot`  
-
+`~$ sudo reboot`

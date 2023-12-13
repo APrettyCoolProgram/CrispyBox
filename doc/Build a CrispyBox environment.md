@@ -15,10 +15,7 @@ The CrispyBox script will do the following:
 - Removes the `sudo` password requirement for the `crispybox` user
 - Modifies the MOTD
 - Updates/upgrades the system
-- Installs the following packages:
-  - `open-vm-tools`
-  - `net-tools`
-  - `openssh-server`
+- Installs required packages
 - Cleans the system
 - Optimizes the system
 
