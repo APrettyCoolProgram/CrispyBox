@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-## CrispyBox v23.12 [b231213.1447]
+## CrispyBox v23.12 [b231213.1507]
 ## CrispyBox script.
 ## https://github.com/APrettyCoolProgram/CrispyBox
 ## Copyright (c) A Pretty Cool Program. All rights reserved.
