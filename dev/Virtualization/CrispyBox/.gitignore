@@ -1,0 +1,46 @@
+## ================================================================= [ b230511 ]
+## A generic .gitignore file for GitHub repositories
+## 
+## Also check out:
+##  - https://gitignore.io
+##  - https://github.com/github/gitignore
+## =============================================================================
+
+## Data/sourcecode that is used during development, but should not be committed
+## to the repository should go here.
+*.non-committed/
+
+## Large files/installation packages that should be included in releases should
+## go here.to the repository should go here.
+*.for-releases/
+
+## User-specific data
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## Build results. Be careful with these, as your sourcecode may have directories with these
+## names, in which case they will not committed to the repository.
+[Dd]ebug/
+[Dd]ebugPublic/
+#[Rr]elease/
+#[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+#[Ll]og/
+#[Ll]ogs/
+
+## Temporary/cached data
+.vs/
+
+## MacOS specific
+*DS_Store
