@@ -17,6 +17,7 @@ Create a new VMWare Workstation virtual machine with the following specification
 - 4096MB RAM
 - 2 CPU
 - Disable "Share Bluetooth devices with the virtual machine"
+- Enabled the enhanced keyboard
 
 If you are going to install desktop packages:
 
