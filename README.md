@@ -18,6 +18,7 @@ Create a new VMWare Workstation virtual machine with the following specification
 - 2 CPU
 - Disable "Share Bluetooth devices with the virtual machine"
 - Enabled the enhanced keyboard
+- Virtual Machine Settings > Processors > Virtualize IOMMU
 
 If you are going to install desktop packages:
 
@@ -78,3 +79,8 @@ Once you are ready to build a CrispyBox development environment, type the follow
 `~$ chmod +x CrispyBox.sh`
 
 `~$ ./CrispyBox.sh`
+
+
+# VSCode
+
+https://code.visualstudio.com/docs/remote/ssh#_managing-extensions
