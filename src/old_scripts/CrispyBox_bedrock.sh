@@ -33,7 +33,7 @@ sudo apt install openssh-server -y | tee ~/.CrispyBox/Logs/Bedrock_install-opens
 wget https://raw.githubusercontent.com/APrettyCoolProgram/CrispyBox/main/src/CrispyBox.sh -P ~/.CrispyBox/Scripts/
 chmod +x ~/.CrispyBox/Scripts/CrispyBox.sh
 
-## Remove unnecessary packages.
+## Remove unnecessary packages.criu
 sudo apt autoremove -y | tee ~/.CrispyBox/Logs/Bedrock_autoremove.$(date "+%Y%m%d-%H%M%S")
 sudo apt autoclean -y | tee ~/.CrispyBox/Logs/Bedrock_autoclean.$(date "+%Y%m%d-%H%M%S")
 sudo apt clean -y | tee ~/.CrispyBox/Logs/Bedrock_clean.$(date "+%Y%m%d-%H%M%S")

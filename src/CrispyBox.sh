@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-## CrispyBox(b231213)
+## CrispyBox v23.12 [b231213]
 ## CrispyBox script.
 ## https://github.com/APrettyCoolProgram/CrispyBox
 ## Copyright (c) A Pretty Cool Program. All rights reserved.
@@ -19,15 +19,15 @@ sudo apt update -y | tee ~/.CrispyBox/Logs/apt-update.$(date "+%Y%m%d-%H%M%S")
 sudo apt upgrade -y | tee ~/.CrispyBox/Logs/apt-upgrade.$(date "+%Y%m%d-%H%M%S")
 
 ## Install packages
-sudo apt install -y open-vm-tools | tee ~/.CrispyBox/Logs/apt-install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y openssh-server | tee ~/.CrispyBox/Logs/apt-install-openssh-server.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y linux-headers-$(uname -r) | tee ~/.CrispyBox/Logs/install-linux-headers.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y curl | tee ~/.CrispyBox/Logs/install-curl.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y gpg | tee ~/.CrispyBox/Logs/install-gpg.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y apt-transport-https | tee ~/.CrispyBox/Logs/install-apt-transport-https.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y dkms | tee ~/.CrispyBox/Logs/install-dkms.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y build-essential | tee ~/.CrispyBox/Logs/install-build-essential.$(date "+%Y%m%d-%H%M%S")
-sudo apt install -y screen | tee ~/.CrispyBox/Logs/install-screen.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y open-vm-tools | tee ~/.CrispyBox/Logs/apt-install-open-vm-tools.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y openssh-server | tee ~/.CrispyBox/Logs/apt-install-openssh-server.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y linux-headers-$(uname -r) | tee ~/.CrispyBox/Logs/install-linux-headers.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y curl | tee ~/.CrispyBox/Logs/install-curl.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y gpg | tee ~/.CrispyBox/Logs/install-gpg.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y apt-transport-https | tee ~/.CrispyBox/Logs/install-apt-transport-https.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y dkms | tee ~/.CrispyBox/Logs/install-dkms.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y build-essential | tee ~/.CrispyBox/Logs/install-build-essential.$(date "+%Y%m%d-%H%M%S")
+sudo apt install --no-install-recommends --no-install-suggests -y screen | tee ~/.CrispyBox/Logs/install-screen.$(date "+%Y%m%d-%H%M%S")
 
 ## Remove unnecessary packages.
 sudo apt autoremove -y | tee ~/.CrispyBox/Logs/apt-autoremove.$(date "+%Y%m%d-%H%M%S")
@@ -49,7 +49,7 @@ touch .bash_history
 history -c
 
 # Update the MOTD.
-printf "\n\n===== CrispyBox $(date "+%y.%m") ===============================================\n\n > Release: $(date)\n > https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
+printf "\n\n===== CrispyBox $(date "+%y.%m") ===============================================\n\n > Build 231213\n > Release: $(date)\n > https://github.com/APrettyCoolProgram/CrispyBox\n\n============================================================\n\n" | sudo tee /etc/motd
 
 # Reboot the system to make sure changes take effect.
 sudo reboot

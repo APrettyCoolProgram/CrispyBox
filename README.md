@@ -2,7 +2,9 @@
 
 Description here.
 
-# Create a CrispyBox Base image
+# Create a CrispyBox Bedrock image
+
+The CrispyBox Bedrock image is a Debian-based VMWare virtual machine that you can use to build your CrispyBox development environment on top of.
 
 ## Create a new virtual machine
 
@@ -75,3 +77,13 @@ Once you are ready to build a CrispyBox development environment, type the follow
 `~$ chmod +x CrispyBox.sh`
 
 `~$ ./CrispyBox.sh`
+
+# Included packages (as of v23.12)
+
+- `open-vm-tools`
+- `openssh-server`
+- `linux-headers-$(uname -r)`
+- `curl`
+- `gpg`
+- `apt-transport-https`
+- `screen`
